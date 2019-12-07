@@ -376,17 +376,7 @@ export default class DayPickerInput extends React.Component {
   // hidden. There are different approaches to avoid hiding the overlay when
   // this happens, but the only cross-browser hack we’ve found is to set all
   // these timeouts in code before changing `overlayHasFocus`.
-  handleInputBlur(e) {
-    this.inputBlurTimeout = setTimeout(() => {
-      if (!this.overlayHasFocus) {
-        this.hideDayPicker();
-      }
-    }, 1);
-    if (this.props.inputProps.onBlur) {
-      e.persist();
-      this.props.inputProps.onBlur(e);
-    }
-  }
+  handleInputBlur(e) {}
 
   handleOverlayFocus(e) {
     e.preventDefault();
